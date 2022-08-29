@@ -8,5 +8,10 @@ def admin_home(request):
 
 class CategoriesListView(ListView):
     model=Categories
-    template_name: "admin_templates/category_list.html"
+    template_name= "admin_templates/category_list.html"
+
+class CategoriesCreate(CreateView):
+    model=Categories
+    fields="__all__"
+    template_name="admin_templates/category_create.html"
     
