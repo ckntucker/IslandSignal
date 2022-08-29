@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from islandsignalapp import views
+from islandsignalapp import AdminViews
+from django.conf.urls.static import static
+from IslandSignal import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    path('admin/', views.adminLogin,name="admin_login"),
+    path('demo',views.demoPage),
+    path('demoPage',views.demoPageTemplate),
+    path('admin_login_process',views.adminLoginProcess,name="admin_login_process"),
+    path('admin_logout_process',views.adminLogoutProcess,name="admin_logout_process"),
+
+    path('admin_home',AdminViews.admin_home,name="admin_home")
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
