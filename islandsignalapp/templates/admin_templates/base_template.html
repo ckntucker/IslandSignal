@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>
-    {% block title %}
-    {% endblock title %}
+      {% block title %}
+      {% endblock title %}
   </title>
 
   <!-- General CSS Files -->
@@ -22,16 +22,26 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <link rel="stylesheet" href="{% static '/css/components.css' %}">
+
   {% block custom_css %}
   {% endblock custom_css %}
-</head>
+
+  <style>
+  ul.errorlist{
+    margin:0px;
+  }
+  .no-margin{
+    margin:0px;
+  }
+  </style>
+<!-- /END GA --></head>
 
 <body>
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
       {% include 'admin_templates/navbar.html' %}
-      {% include 'admin_templates/sidebar.html' %}
-     
+      {% include 'admin_templates/sidebar.html' with id=form.instance.id %}
+   
 
       <!-- Main Content -->
       <div class="main-content">
@@ -39,12 +49,26 @@
           <div class="section-header">
             <h1>{% block page_title %}{% endblock page_title %}</h1>
           </div>
-          {% block page_content %}
-          {% endblock page_content %}
+          {% if messages %}
+          {% for message in messages %}
+          {% if message.tags == "success" %}
+          <div class="alert alert-success">
+          {{ message }}
+          </div>
+          {% endif %}
+          {% if message.tags == "error" %}
+          <div class="alert alert-danger">
+          {{ message }}
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+        {% block page_content %}
+        {% endblock page_content %}
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2022 <div class="bullet"></div> Ckntucker
+          Copyright &copy; 2022 <div class="bullet"></div>  Ckntucker 
         </div>
         <div class="footer-right">
           
@@ -78,5 +102,10 @@
   <script src="{% static '/js/custom.js' %}"></script>
   {% block custom_js %}
   {% endblock custom_js %}
+  <script>
+    document.getElementById("title").onkeyup=function(){
+      document.getElementById("url_slug").value=document.getElementById("title").value.toLowerCase().replaceAll(" ","-");
+    }
+  </script>
 </body>
 </html>

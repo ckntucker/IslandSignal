@@ -42,8 +42,8 @@
         <li class="dropdown {% if request.path == merchant_create %} active {% endif %}{% if request.path == merchant_list %} active {% endif %} {% if request.path == merchant_update %} active {% endif %}">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-dice-d6"></i><span>Merchant User</span></a>
           <ul class="dropdown-menu">
-            <li class='{% if request.path == merchant_create %} active {% endif %}'><a class="nav-link" href="{% url 'merchant_create' %}">Add Merchant User</a></li>
-            <li class='{% if request.path == merchant_list %} active {% endif %} {% if request.path == merchant_update %} active {% endif %}' ><a class="nav-link" href="{% url 'merchant_list' %}">Merchant User List</a></li>
+            {% comment %} <li class='{% if request.path == merchant_create %} active {% endif %}'><a class="nav-link" href="{% url 'merchant_create' %}">Add Merchant User</a></li> {% endcomment %}
+            {% comment %} <li class='{% if request.path == merchant_list %} active {% endif %} {% if request.path == merchant_update %} active {% endif %}' ><a class="nav-link" href="{% url 'merchant_list' %}">Merchant User List</a></li> {% endcomment %}
           </ul>
         </li>  
         {% comment %} STAFF USER URLS {% endcomment %}
@@ -53,8 +53,8 @@
         <li class="dropdown {% if request.path == staff_create %} active {% endif %}{% if request.path == staff_list %} active {% endif %} {% if request.path == staff_update %} active {% endif %}">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-dice-d6"></i><span>Staff User</span></a>
           <ul class="dropdown-menu">
-            <li class='{% if request.path == staff_create %} active {% endif %}'><a class="nav-link" href="{% url 'staff_create' %}">Add Staff User</a></li>
-            <li class='{% if request.path == staff_list %} active {% endif %} {% if request.path == staff_update %} active {% endif %}' ><a class="nav-link" href="{% url 'staff_list' %}">Staff User List</a></li>
+            {% comment %} <li class='{% if request.path == staff_create %} active {% endif %}'><a class="nav-link" href="{% url 'staff_create' %}">Add Staff User</a></li> {% endcomment %}
+            {% comment %} <li class='{% if request.path == staff_list %} active {% endif %} {% if request.path == staff_update %} active {% endif %}' ><a class="nav-link" href="{% url 'staff_list' %}">Staff User List</a></li> {% endcomment %}
           </ul>
         </li>      
         {% comment %} CUSTOMER USER URLS {% endcomment %}
