@@ -10,6 +10,10 @@ Deployed Site-https://islandsignalandsound.herokuapp.com/
 -CSS
 -Bootstrap
 
+<h1>OverView</h1>
+<p>I decided to build my old company, a fire almarm/life safety distributor, a prototype ecommerce webpage.<p>
+
+
 ![Screen Shot 2022-08-29 at 9 30 20 PM](https://user-images.githubusercontent.com/106419711/187379323-5e649e85-6dab-42c1-8540-d980aa1ed873.png)
 
 
