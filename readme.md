@@ -19,7 +19,6 @@ Deployed Site-https://islandsignalandsound.herokuapp.com/
 ![Screen Shot 2022-08-29 at 9 39 51 PM](https://user-images.githubusercontent.com/106419711/187378700-8fc47247-f54b-48bf-ba5f-fcdd4d803fec.png)
 
 
-![Screen Shot 2022-08-29 at 9 32 26 PM](https://user-images.githubusercontent.com/106419711/187378524-31edf534-c25f-47bd-aac8-6a804eba41eb.png)
 
 
 <h2>ERD</h2>
